@@ -104,26 +104,38 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+<p>Follow these steps to set up and run the Tic-Tac-Toe project locally.</p>
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-5. Change git remote url to avoid accidental pushes to base project
-   ```sh
-   git remote set-url origin github_username/repo_name
-   git remote -v # confirm the changes
-   ```
+<h2>Prerequisites</h2>
+<ul>
+<li><a href="https://www.python.org/downloads/" target="_blank">Python 3.x</a> must be installed.</li>
+<li><a href="https://nodejs.org/" target="_blank">Node.js</a> must be installed.</li>
+<li><a href="https://dotnet.microsoft.com/download" target="_blank">.NET SDK</a> must be installed.</li>
+</ul>
+
+<h2>Installation Steps</h2>
+<ol>
+<li><strong>Clone the repository:</strong>
+<pre><code>git clone https://github.com/SanjinRuzic/TicTacToe.git</code></pre></li>
+<li><strong>Navigate to the project directory:</strong>
+<pre><code>cd TicTacToe/src</code></pre></li>
+<li>
+<strong>Run the application:</strong><p>Choose the implementation you want to run:</p>
+<ul>
+<li><strong>Python:</strong>
+<pre><code>python TicTacToe.py</code></pre></li>
+<li><strong>JavaScript:</strong>
+<pre><code>node TicTacToe.js</code></pre></li>
+<li><strong>C#:</strong>
+<pre><code>dotnet run TicTacToe.cs</code></pre></li>
+</ul>
+</li>
+</ol>
+
+<ul>
+<li>Ensure you are in the <code>src</code> directory when running the commands.</li>
+<li>Verify that the required software (Python, Node.js, and .NET SDK) is properly installed and added to your system's PATH.</li>
+</ul>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
