@@ -58,9 +58,9 @@ Tic-Tac-Toe is a two-player game in which players take turns marking spaces on a
 
 
 ### Built With
-* [![Python][Python.shield]][Python-url]
-* [![JavaScript][JavaScript.shield]][JavaScript-url]
-* [![C#][CSharp.shield]][CSharp-url]
+* [![Python][python-shield]][python-url]
+* [![JavaScript][javascript-shield]][javascript-url]
+* [![C#][csharp-shield]][csharp-url]
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Features
@@ -143,6 +143,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [python-url]: https://www.python.org/
 [javascript-shield]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
 [JavaScript-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
-[CSharp.shield]: https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white
-[CSharp-url]: https://learn.microsoft.com/en-us/dotnet/csharp/
+[csharp.shield]: https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white
+[csharp-url]: https://learn.microsoft.com/en-us/dotnet/csharp/
 
