@@ -143,6 +143,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [python-url]: https://www.python.org/
 [javascript-shield]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
 [JavaScript-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
-[csharp.shield]: https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white
+[csharp-shield]: https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white
 [csharp-url]: https://learn.microsoft.com/en-us/dotnet/csharp/
 
