@@ -8,7 +8,7 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/SanjinRuzic/TicTacToe">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -17,11 +17,11 @@
   <p align="center">
     A TicTacToe game developed in Python, JavaScript and C# as a collaborative software team project for the CS305 course.
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/SanjinRuzic/TicTacToe">View Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/SanjinRuzic/TicTacToe/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/SanjinRuzic/TicTacToe/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -34,11 +34,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
+         <li><a href="#features">Features</a></li>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
@@ -48,14 +44,11 @@
   </ol>
 </details>
 
-
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 
 Tic-Tac-Toe is a two-player game in which players take turns marking spaces on a 3x3 grid, with the objective being to align three of their markers in a row, column or diagonal. The project reimagines this classic game experience with a Python, JavaScript and C# console-based implementation. Our aim is not only to deliver a faithful rendition of the classic game experience but also to explore different language features and programming methodologies each language offers, and in creating these comparisons broaden our overall understanding and sharpen our software development skills in these technologies.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ### Built With
 * [![Python][python-shield]][python-url]
@@ -87,20 +80,6 @@ After a win or draw, the game can be reset, clearing the board and starting a ne
 </ul>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
 
 ### Installation
 
@@ -158,23 +137,20 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
+[contributors-shield]: https://img.shields.io/github/contributors/SanjinRuzic/TicTacToe.svg?style=for-the-badge
+[contributors-url]: https://github.com/SanjinRuzic/TicTacToe/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/SanjinRuzic/TicTacToe.svg?style=for-the-badge
+[forks-url]: https://github.com/SanjinRuzic/TicTacToe/network/members
+[stars-shield]: https://img.shields.io/github/stars/SanjinRuzic/TicTacToe.svg?style=for-the-badge
+[stars-url]: https://github.com/SanjinRuzic/TicTacToe/stargazers
+[issues-shield]: https://img.shields.io/github/issues/SanjinRuzic/TicTacToe.svg?style=for-the-badge
+[issues-url]: https://github.com/SanjinRuzic/TicTacToe/issues
+[license-shield]: https://img.shields.io/github/license/SanjinRuzic/TicTacToe.svg?style=for-the-badge
+[license-url]: https://github.com/SanjinRuzic/TicTacToe/blob/master/LICENSE.txt
 [python-shield]: https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
 [python-url]: https://www.python.org/
 [javascript-shield]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
-[JavaScript-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+[javascript-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
 [csharp-shield]: https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white
 [csharp-url]: https://learn.microsoft.com/en-us/dotnet/csharp/
 
