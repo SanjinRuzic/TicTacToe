@@ -9,7 +9,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/SanjinRuzic/TicTacToe">
-    <img src="https://e7.pngegg.com/pngimages/923/206/png-clipart-tictactoe-tic-tac-toe-oxo-tac-tic-toe-computer-icons-games-buttons-game-logo-thumbnail.png" alt="Logo" width="80" height="80">
+    <img src="https://m.media-amazon.com/images/I/411RqsooQ3L.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Tic-Tac-Toe Game</h3>
