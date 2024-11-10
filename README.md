@@ -46,7 +46,7 @@
 
 ## About The Project
 
-Tic-Tac-Toe is a two-player game in which players take turns marking spaces on a 3x3 grid, with the objective being to align three of their markers in a row, column or diagonal. The project reimagines this classic game experience with a Python, JavaScript and C# console-based implementation. Our aim is not only to deliver a faithful rendition of the classic game experience but also to explore different language features and programming methodologies each language offers, and in creating these comparisons broaden our overall understanding and sharpen our software development skills in these technologies.
+Tic-Tac-Toe is a two-player game in which players take turns marking spaces on a 3x3 grid, with the objective being to align three of their markers in a row, column or diagonal. The project reimagines this classic game experience with a Python, JavaScript and C# console-based implementation. Our aim is not only to deliver a faithful rendition of Tic-Tac-Toe but also to explore different language features and programming methodologies each language offers, and in creating these comparisons broaden our overall understanding and sharpen our software development skills in these technologies.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -121,9 +121,9 @@ After a win or draw, the game can be reset, clearing the board and starting a ne
 ## Team Members
 
 <ul>
-  <li>Cem Berke Tepedelen</li>
-  <li>Muhammed Said Sincar</li>
-  <li>Sanjin Ružić</li>
+  <li>Cem Berke Tepedelen (JavaScript)</li>
+  <li>Muhammed Said Sincar (Python)</li>
+  <li>Sanjin Ružić (C#)</li>
 </ul>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
