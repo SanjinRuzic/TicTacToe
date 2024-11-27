@@ -2,7 +2,12 @@
 
 public class TicTacToe
 {
-    public static void PrintGrid(string[] grid)
+    private string[] grid = new string[9] { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+    private int currentPlayer = 1;
+    private bool isGameActive = true;
+    private int numTurns = 0;
+
+    public void PrintGrid()
     {
         for (int i = 0; i < grid.Length; i++)
         {
@@ -23,21 +28,31 @@ public class TicTacToe
         }
     }
 
-    public static void Main(string[] args)
+    public bool CheckWinDraw()
     {
-        string[] grid = new string[9] { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-        int currentPlayer = 1;
-        bool isGameActive = true;
+        bool row1_win = grid[0] == grid[1] && grid[1] == grid[2];
+        bool row2_win = grid[3] == grid[4] && grid[4] == grid[5];
+        bool row3_win = grid[6] == grid[7] && grid[7] == grid[8];
+        bool col1_win = grid[0] == grid[3] && grid[3] == grid[6];
+        bool col2_win = grid[1] == grid[4] && grid[4] == grid[7];
+        bool col3_win = grid[2] == grid[5] && grid[5] == grid[8];
+        bool diag1_win = grid[0] == grid[4] && grid[4] == grid[8];
+        bool diag2_win = grid[6] == grid[4] && grid[4] == grid[2];
 
+        return row1_win || row2_win || row3_win || col1_win || col2_win || col3_win || diag1_win || diag2_win;
+    }
+
+    public void Play()
+    {
         Console.WriteLine("Welcome to 3x3 TicTacToe!");
         Console.WriteLine("To make a move, enter the number corresponding to the cell where you want to place your symbol.");
         Console.WriteLine("Player 1: X, Player 2: O");
         Console.WriteLine();
 
-        while (isGameActive)
+        while (isGameActive && numTurns < 9)
         {
             Console.WriteLine();
-            PrintGrid(grid);
+            PrintGrid();
             Console.WriteLine();
 
             Console.Write($"Player {currentPlayer}, enter your move: ");
@@ -50,7 +65,19 @@ public class TicTacToe
                 if (grid[choice - 1] != "X" && grid[choice - 1] != "O")
                 {
                     grid[choice - 1] = currentPlayer == 1 ? "X" : "O";
-                    currentPlayer = currentPlayer == 1 ? 2 : 1;
+                    
+                    if (CheckWinDraw())
+                    {
+                        PrintGrid();
+                        Console.WriteLine();
+                        Console.WriteLine($"Player {currentPlayer} wins!");
+                        isGameActive = false;
+                    }
+                    else
+                    {
+                        currentPlayer = currentPlayer == 1 ? 2 : 1;
+                        numTurns++;
+                    }
                 }
                 else
                 {
@@ -61,6 +88,24 @@ public class TicTacToe
             {
                 Console.WriteLine("Invalid move! Please enter a number between 1 and 9 for a cell that is not already taken.");
             }
+
+            if (numTurns == 9 && isGameActive)
+            {
+                PrintGrid();
+                Console.WriteLine("It's a draw!");
+                Console.WriteLine();
+                isGameActive = false;
+            }
         }
+
+        PrintGrid();
+        Console.WriteLine();
+        Console.WriteLine("Game over!");
+    }
+
+    public static void Main(string[] args)
+    {
+        TicTacToe game = new TicTacToe();
+        game.Play();
     }
 }
