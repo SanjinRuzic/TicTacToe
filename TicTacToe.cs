@@ -11,7 +11,13 @@ public class TicTacToe
     {
         for (int i = 0; i < grid.Length; i++)
         {
+            if(grid[i] == "X") 
+            Console.ForegroundColor = ConsoleColor.Red;
+            else if (grid[i] == "O")
+            Console.ForegroundColor = ConsoleColor.Blue;
+    
             Console.Write(" {0} ", grid[i]);
+            Console.ResetColor();
 
             if ((i + 1) % 3 == 0)
             {
@@ -26,6 +32,7 @@ public class TicTacToe
                 Console.Write("|");
             }
         }
+        Console.ResetColor();
     }
 
     public bool CheckWinDraw()
@@ -70,7 +77,8 @@ public class TicTacToe
                     {
                         PrintGrid();
                         Console.WriteLine();
-                        Console.WriteLine($"Player {currentPlayer} wins!");
+                        Console.WriteLine($"Congratulations, Player {currentPlayer} wins! Thanks for playing.");
+                        Console.WriteLine();
                         isGameActive = false;
                     }
                     else
@@ -92,7 +100,7 @@ public class TicTacToe
             if (numTurns == 9 && isGameActive)
             {
                 PrintGrid();
-                Console.WriteLine("It's a draw!");
+                Console.WriteLine("It's a draw! Thanks for playing.");
                 Console.WriteLine();
                 isGameActive = false;
             }
