@@ -11,11 +11,11 @@ public class TicTacToe
     {
         for (int i = 0; i < grid.Length; i++)
         {
-            if(grid[i] == "X") 
-            Console.ForegroundColor = ConsoleColor.Red;
+            if (grid[i] == "X")
+                Console.ForegroundColor = ConsoleColor.Red;
             else if (grid[i] == "O")
-            Console.ForegroundColor = ConsoleColor.Blue;
-    
+                Console.ForegroundColor = ConsoleColor.Blue;
+
             Console.Write(" {0} ", grid[i]);
             Console.ResetColor();
 
@@ -35,6 +35,26 @@ public class TicTacToe
         Console.ResetColor();
     }
 
+    public void MakeMove(string input)
+    {
+        if (input.Length == 1 && char.IsDigit(input[0]) && int.Parse(input) >= 1 && int.Parse(input) <= 9)
+        {
+            int choice = int.Parse(input);
+            if (grid[choice - 1] != "X" && grid[choice - 1] != "O")
+            {
+                grid[choice - 1] = currentPlayer == 1 ? "X" : "O";
+            }
+            else
+            {
+                Console.WriteLine("That cell is already occupied. Please choose another cell.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid input! Please enter a number between 1 and 9.");
+        }
+    }
+
     public bool CheckWinDraw()
     {
         bool row1_win = grid[0] == grid[1] && grid[1] == grid[2];
@@ -49,8 +69,9 @@ public class TicTacToe
         return row1_win || row2_win || row3_win || col1_win || col2_win || col3_win || diag1_win || diag2_win;
     }
 
-    public void ResetGame() {
-        grid = new string[9] { "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+    public void ResetGame()
+    {
+        grid = new string[9] { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
         currentPlayer = 1;
         numTurns = 0;
         isGameActive = true;
@@ -71,39 +92,22 @@ public class TicTacToe
 
             Console.Write($"Player {currentPlayer}, enter your move: ");
             string input = Console.ReadLine();
+            MakeMove(input);
 
-            if (input.Length == 1 && char.IsDigit(input[0]) && int.Parse(input) >= 1 && int.Parse(input) <= 9)
+            if (CheckWinDraw())
             {
-                int choice = int.Parse(input);
-
-                if (grid[choice - 1] != "X" && grid[choice - 1] != "O")
-                {
-                    grid[choice - 1] = currentPlayer == 1 ? "X" : "O";
-                    
-                    if (CheckWinDraw())
-                    {
-                        PrintGrid();
-                        Console.WriteLine();
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine($"Congratulations, Player {currentPlayer} wins! Thanks for playing 🎉");
-                        Console.ResetColor();
-                        Console.WriteLine();
-                        isGameActive = false;
-                    }
-                    else
-                    {
-                        currentPlayer = currentPlayer == 1 ? 2 : 1;
-                        numTurns++;
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("That cell is already occupied. Please choose another cell.");
-                }
+                PrintGrid();
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"Congratulations, Player {currentPlayer} wins! Thanks for playing 🎉");
+                Console.ResetColor();
+                Console.WriteLine();
+                isGameActive = false;
             }
             else
             {
-                Console.WriteLine("Invalid move! Please enter a number between 1 and 9 for a cell that is not already taken.");
+                currentPlayer = currentPlayer == 1 ? 2 : 1;
+                numTurns++;
             }
 
             if (numTurns == 9 && isGameActive)
@@ -120,23 +124,29 @@ public class TicTacToe
         Console.WriteLine();
         Console.WriteLine("Game over!");
         Console.WriteLine("Would you like to play again? (y/n)");
-        if (Console.ReadLine().ToLower() == "y") {
+        if (Console.ReadLine().ToLower() == "y")
+        {
             ResetGame();
+            Play();
         }
-        else {
+        else
+        {
             isGameActive = false;
             Console.WriteLine("Maybe next time! Goodbye!");
         }
-        
     }
 
     public static void Main(string[] args)
     {
         TicTacToe game = new TicTacToe();
         Console.WriteLine("Would you like to play TicTacToe? (y/n)");
-        if(Console.ReadLine().ToLower() == "y")
-        game.Play();
+        if (Console.ReadLine().ToLower() == "y")
+        {
+            game.Play();
+        }
         else
-        Console.WriteLine("Maybe next time, goodbye!");
+        {
+            Console.WriteLine("Maybe next time, goodbye!");
+        }
     }
 }
