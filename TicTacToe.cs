@@ -49,6 +49,13 @@ public class TicTacToe
         return row1_win || row2_win || row3_win || col1_win || col2_win || col3_win || diag1_win || diag2_win;
     }
 
+    public void ResetGame() {
+        grid = new string[9] { "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+        currentPlayer = 1;
+        numTurns = 0;
+        isGameActive = true;
+    }
+
     public void Play()
     {
         Console.WriteLine("Welcome to 3x3 TicTacToe!");
@@ -77,7 +84,9 @@ public class TicTacToe
                     {
                         PrintGrid();
                         Console.WriteLine();
-                        Console.WriteLine($"Congratulations, Player {currentPlayer} wins! Thanks for playing.");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"Congratulations, Player {currentPlayer} wins! Thanks for playing 🎉");
+                        Console.ResetColor();
                         Console.WriteLine();
                         isGameActive = false;
                     }
@@ -89,7 +98,7 @@ public class TicTacToe
                 }
                 else
                 {
-                    Console.WriteLine("Please choose a cell that is not already taken.");
+                    Console.WriteLine("That cell is already occupied. Please choose another cell.");
                 }
             }
             else
@@ -100,7 +109,8 @@ public class TicTacToe
             if (numTurns == 9 && isGameActive)
             {
                 PrintGrid();
-                Console.WriteLine("It's a draw! Thanks for playing.");
+                Console.WriteLine();
+                Console.WriteLine("It's a draw! 🤝 Thanks for playing.");
                 Console.WriteLine();
                 isGameActive = false;
             }
@@ -109,11 +119,24 @@ public class TicTacToe
         PrintGrid();
         Console.WriteLine();
         Console.WriteLine("Game over!");
+        Console.WriteLine("Would you like to play again? (y/n)");
+        if (Console.ReadLine().ToLower() == "y") {
+            ResetGame();
+        }
+        else {
+            isGameActive = false;
+            Console.WriteLine("Maybe next time! Goodbye!");
+        }
+        
     }
 
     public static void Main(string[] args)
     {
         TicTacToe game = new TicTacToe();
+        Console.WriteLine("Would you like to play TicTacToe? (y/n)");
+        if(Console.ReadLine().ToLower() == "y")
         game.Play();
+        else
+        Console.WriteLine("Maybe next time, goodbye!");
     }
 }
