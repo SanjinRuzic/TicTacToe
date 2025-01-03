@@ -57,17 +57,20 @@ Tic-Tac-Toe is a two-player game in which players take turns marking spaces on a
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Features
-<h2>Input</h2>
+<h2>Inputs</h2>
 In the game, each player takes turns to choose a number from 1 to 9 to place their marker (either X or O) on the 3x3 grid. The program accepts the input only in the form of a number, and checks whether the selected cell is still available. After each turn, the game board is updated to reflect the current state of the game. Players are not allowed to place a marker on a cell that is already occupied. Once the game ends, players are not allowed to make any more moves.
- <h2>Output</h2>
+
+<h2>Outputs</h2>
 <ul>
-<li><strong>Game Grid:</strong> After each move, the current game state is displayed as a 3x3 grid showing the position of 'X' and 'O'. Here is an example of such output:</li>
-<pre>
- 1 | 2 | O
----|---|---
- X | O | 6
----|---|---
- X | 8 | X
+    <li><strong>Game Grid:</strong> After each move, the current game state is displayed as a 3x3 grid showing the position of 'X' and 'O'. Here is an example of such output:</li>
+    <pre>
+     1 | 2 | O
+    ---|---|---
+     X | O | 6
+    ---|---|---
+     X | 8 | X
+    </pre>
+</ul>
 </pre>
 <li><strong>Win Condition:</strong></li>
 A player wins should three of their markers (either X or O), align in a column, row or diagonal. Our application will then announce the winner along with displaying a congratulatory message such as "Player X wins!" or "Player O wins!"</li>
@@ -109,7 +112,6 @@ After a win or draw, the game can be reset, clearing the board and starting a ne
 </ol>
 
 <ul>
-<li>Ensure you are in the <code>src</code> directory when running the commands.</li>
 <li>Verify that the required software (Python, Node.js, and .NET SDK) is properly installed and added to your system's PATH.</li>
 </ul>
 
