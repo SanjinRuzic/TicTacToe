@@ -58,21 +58,19 @@ Tic-Tac-Toe is a two-player game in which players take turns marking spaces on a
 
 ## Features
 <h2>Inputs</h2>
-<ul>
-  <li><strong>User Input:</strong> The two players can make moves by providing a number from 1 to 9 corresponding to the cell they wish to place their marker (X or O) on the 3x3 grid. This input is only taken in the form of a number, and the program checks whether the selected position is available. Each move the player will be prompted to select a number for their move until a win or draw occurs.
-The grid is updated after each turn to display the current state of the board. Players may not place a marker in any cell that is already previously occupied. Similarly, if the game ends, then no players are allowed to make any more moves.</li>
+In the game, each player takes turns to choose a number from 1 to 9 to place their marker (either X or O) on the 3x3 grid. The program accepts the input only in the form of a number, and checks whether the selected cell is still available. After each turn, the game board is updated to reflect the current state of the game. Players are not allowed to place a marker on a cell that is already occupied. Once the game ends, players are not allowed to make any more moves.
  <h2>Outputs</h2>
 <ul>
 <li><strong>Game Grid:</strong> After each move, the current game state is displayed as a 3x3 grid showing the position of 'X' and 'O'. Here is an example of such output:</li>
 <pre>
-X | O | 3
----------
-4 | X | 6
----------
-7 | 8 | O
+1 | 2 | O
+---|---|---
+ X | O | 6
+---|---|---
+ X | 8 | X
 </pre>
 <li><strong>Win Condition:</strong></li>
-A player wins in the event that three of their markers (either X or O), align in a column, row or diagonal. Our application will then announce the winner along with displaying a congratulatory message such as "Player X wins!" or "Player O wins!"</li>
+A player wins should three of their markers (either X or O), align in a column, row or diagonal. Our application will then announce the winner along with displaying a congratulatory message such as "Player X wins!" or "Player O wins!"</li>
 <li><strong>Draw Condition:</strong></li>
 The game is a draw if all cells are filled and no player has managed to align their three markers. In that instance, a message such as "It's a draw!" will be displayed.</li>
 <li><strong>Game Reset:</strong></li>
@@ -86,6 +84,7 @@ After a win or draw, the game can be reset, clearing the board and starting a ne
 <p>Follow these steps to set up and run the Tic-Tac-Toe project locally.</p>
 
 <h2>Prerequisites</h2>
+<p>Before proceeding, ensure that the following are properly installed and configured on your system, depending on the implementation:</p>
 <ul>
 <li><a href="https://www.python.org/downloads/" target="_blank">Python 3.x</a> must be installed.</li>
 <li><a href="https://nodejs.org/" target="_blank">Node.js</a> must be installed.</li>
@@ -112,7 +111,6 @@ After a win or draw, the game can be reset, clearing the board and starting a ne
 </ol>
 
 <ul>
-<li>Ensure you are in the <code>src</code> directory when running the commands.</li>
 <li>Verify that the required software (Python, Node.js, and .NET SDK) is properly installed and added to your system's PATH.</li>
 </ul>
 
