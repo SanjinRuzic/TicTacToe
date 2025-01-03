@@ -6,9 +6,17 @@ public class TicTacToe
     private int currentPlayer = 1;
     private bool isGameActive = true;
     private int numTurns = 0;
+    private int player1Score = 0;
+    private int player2Score = 0;
+
+    public void ShowScore()
+    {
+        Console.WriteLine($"\nScore - Player X: {player1Score} | Player O: {player2Score}\n");
+    }
 
     public void PrintGrid()
     {
+        ShowScore();
         for (int i = 0; i < grid.Length; i++)
         {
             if (grid[i] == "X")
@@ -77,6 +85,14 @@ public class TicTacToe
         isGameActive = true;
     }
 
+    public void UpdateScore()
+    {
+        if (currentPlayer == 1)
+            player1Score++;
+        else
+            player2Score++;
+    }
+
     public void Play()
     {
         Console.WriteLine("Welcome to 3x3 TicTacToe!");
@@ -96,6 +112,7 @@ public class TicTacToe
 
             if (CheckWinDraw())
             {
+                UpdateScore();
                 PrintGrid();
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -120,8 +137,7 @@ public class TicTacToe
             }
         }
 
-        PrintGrid();
-        Console.WriteLine();
+        ShowScore();
         Console.WriteLine("Game over!");
         Console.WriteLine("Would you like to play again? (y/n)");
         if (Console.ReadLine().ToLower() == "y")
@@ -132,7 +148,8 @@ public class TicTacToe
         else
         {
             isGameActive = false;
-            Console.WriteLine("Maybe next time! Goodbye!");
+            ShowScore();
+            Console.WriteLine("\nThanks for playing! Goodbye!");
         }
     }
 
