@@ -65,9 +65,9 @@ In the game, each player takes turns to choose a number from 1 to 9 to place the
 <pre>
 1 | 2 | O
 ---|---|---
- X | O | 6
+X | O | 6
 ---|---|---
- X | 8 | X
+X | 8 | X
 </pre>
 <li><strong>Win Condition:</strong></li>
 A player wins should three of their markers (either X or O), align in a column, row or diagonal. Our application will then announce the winner along with displaying a congratulatory message such as "Player X wins!" or "Player O wins!"</li>
