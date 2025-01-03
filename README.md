@@ -95,8 +95,6 @@ After a win or draw, the game can be reset, clearing the board and starting a ne
 <ol>
 <li><strong>Clone the repository:</strong>
 <pre><code>git clone https://github.com/SanjinRuzic/TicTacToe.git</code></pre></li>
-<li><strong>Navigate to the project directory:</strong>
-<pre><code>cd TicTacToe/src</code></pre></li>
 <li>
 <strong>Run the application:</strong><p>Choose the implementation you want to run:</p>
 <ul>
