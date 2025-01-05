@@ -45,27 +45,29 @@ public class TicTacToe
 
     public bool MakeMove(string input)
     {
-        if (input.Length == 1 && char.IsDigit(input[0]) && int.Parse(input) >= 1 && int.Parse(input) <= 9)
-        {
-            int choice = int.Parse(input);
-            if (grid[choice - 1] != "X" && grid[choice - 1] != "O")
-            {
-                grid[choice - 1] = currentPlayer == 1 ? "X" : "O";
-                return true;
-            }
-            else
-            {
-                Console.WriteLine("That cell is already occupied. Please choose another cell.");
-                return false;
-            }
-        }
-        else
+
+        if (string.IsNullOrEmpty(input))
         {
             Console.WriteLine("Invalid input! Please enter a number between 1 and 9.");
             return false;
         }
-    }
 
+        if (input.Length != 1 || !int.TryParse(input, out int choice) || choice < 1 || choice > 9)
+        {
+            Console.WriteLine("Invalid input. Please enter a number between 1 and 9.");
+            return false;
+        }
+
+        if (grid[choice - 1] == "X" && grid[choice - 1] == "O")
+        {
+            Console.WriteLine("That cell is already occupied. Please choose another cell.");
+            return false;
+        }
+
+        grid[choice - 1] = currentPlayer == 1 ? "X" : "O";
+        return true;
+    }
+           
     public bool CheckWinDraw()
     {
         bool row1_win = grid[0] == grid[1] && grid[1] == grid[2];
@@ -98,65 +100,69 @@ public class TicTacToe
 
     public void Play()
     {
-        Console.WriteLine("Welcome to 3x3 TicTacToe!");
-        Console.WriteLine("To make a move, enter the number corresponding to the cell where you want to place your symbol.");
-        Console.WriteLine("Player 1: X, Player 2: O");
-        Console.WriteLine();
-
-        while (isGameActive && numTurns < 9)
+        bool playAgain = true;
+        while (playAgain)
         {
-            Console.WriteLine();
-            PrintGrid();
+            Console.WriteLine("Welcome to 3x3 TicTacToe!");
+            Console.WriteLine("To make a move, enter the number corresponding to the cell where you want to place your symbol.");
+            Console.WriteLine("Player 1: X, Player 2: O");
             Console.WriteLine();
 
-            bool validMoveMade = false;
-            while(!validMoveMade)
+            while (isGameActive && numTurns < 9)
             {
-                Console.Write($"Player {currentPlayer}, enter your move: ");
-                string input = Console.ReadLine();
-                validMoveMade = MakeMove(input);
-            }
-
-            if (CheckWinDraw())
-            {
-                UpdateScore();
+                Console.WriteLine();
                 PrintGrid();
                 Console.WriteLine();
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"Congratulations, Player {currentPlayer} wins! Thanks for playing 🎉");
-                Console.ResetColor();
-                Console.WriteLine();
-                isGameActive = false;
+
+                bool validMoveMade = false;
+                while (!validMoveMade)
+                {
+                    Console.Write($"Player {currentPlayer}, enter your move: ");
+                    string input = Console.ReadLine();
+                    validMoveMade = MakeMove(input);
+                }
+
+                if (CheckWinDraw())
+                {
+                    UpdateScore();
+                    PrintGrid();
+                    Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"Congratulations, Player {currentPlayer} wins! Thanks for playing");
+                    Console.ResetColor();
+                    Console.WriteLine();
+                    isGameActive = false;
+                }
+                else
+                {
+                    currentPlayer = currentPlayer == 1 ? 2 : 1;
+                    numTurns++;
+                }
+
+                if (numTurns == 9 && isGameActive)
+                {
+                    PrintGrid();
+                    Console.WriteLine();
+                    Console.WriteLine("It's a draw! Thanks for playing.");
+                    Console.WriteLine();
+                    isGameActive = false;
+                }
+            }
+
+            ShowScore();
+            Console.WriteLine("Game over!");
+            Console.WriteLine("Would you like to play again? (y/n)");
+            string response = Console.ReadLine()?.ToLower() ?? "n";
+            if (response == "y")
+            {
+                ResetGame();
             }
             else
             {
-                currentPlayer = currentPlayer == 1 ? 2 : 1;
-                numTurns++;
+                playAgain = false;
+                ShowScore();
+                Console.WriteLine("\nThanks for playing! Goodbye!");
             }
-
-            if (numTurns == 9 && isGameActive)
-            {
-                PrintGrid();
-                Console.WriteLine();
-                Console.WriteLine("It's a draw! 🤝 Thanks for playing.");
-                Console.WriteLine();
-                isGameActive = false;
-            }
-        }
-
-        ShowScore();
-        Console.WriteLine("Game over!");
-        Console.WriteLine("Would you like to play again? (y/n)");
-        if (Console.ReadLine().ToLower() == "y")
-        {
-            ResetGame();
-            Play();
-        }
-        else
-        {
-            isGameActive = false;
-            ShowScore();
-            Console.WriteLine("\nThanks for playing! Goodbye!");
         }
     }
 
