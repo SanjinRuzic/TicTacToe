@@ -32,18 +32,18 @@ class TicTacToe {
         const choice = parseInt(input);
         if (choice >= 1 && choice <= 9 && this.grid[choice - 1] !== "X" && this.grid[choice - 1] !== "O") {
             this.grid[choice - 1] = this.currentPlayer === 1 ? "X" : "O";
-            return true; // Geçerli hamle
+            return true; 
         } else {
             console.log(`Invalid move! Cell ${choice} is already taken or invalid. Please choose another cell.`);
-            return false; // Geçersiz hamle
+            return false; 
         }
     }
 
     checkWinDraw() {
         const winConditions = [
-            [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
-            [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
-            [0, 4, 8], [2, 4, 6]             // Diagonals
+            [0, 1, 2], [3, 4, 5], [6, 7, 8], 
+            [0, 3, 6], [1, 4, 7], [2, 5, 8], 
+            [0, 4, 8], [2, 4, 6]            
         ];
 
         return winConditions.some(condition => {
@@ -78,7 +78,7 @@ class TicTacToe {
             console.log();
 
             const input = prompt(`Player ${this.currentPlayer}, enter your move: `);
-            const moveSuccessful = this.makeMove(input); // Hamle sonucunu kontrol et
+            const moveSuccessful = this.makeMove(input); 
 
             if (moveSuccessful) {
                 if (this.checkWinDraw()) {
@@ -89,7 +89,7 @@ class TicTacToe {
                     console.log();
                     this.isGameActive = false;
                 } else {
-                    this.currentPlayer = this.currentPlayer === 1 ? 2 : 1; // Sadece geçerli hamlede oyuncu değişir
+                    this.currentPlayer = this.currentPlayer === 1 ? 2 : 1; 
                     this.numTurns++;
                 }
             }
@@ -117,7 +117,7 @@ class TicTacToe {
     }
 }
 
-// Oyunu başlat
+
 const game = new TicTacToe();
 const playGame = prompt("Would you like to play TicTacToe? (y/n): ").toLowerCase();
 if (playGame === "y") {
