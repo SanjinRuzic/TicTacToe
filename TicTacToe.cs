@@ -11,7 +11,7 @@ public class TicTacToe
 
     public void ShowScore()
     {
-        Console.WriteLine($"\nScore - Player X: {player1Score} | Player O: {player2Score}\n");
+        Console.WriteLine($"\nScore: {player1Score} - {player2Score}\n");
     }
 
     public void PrintGrid()
@@ -43,7 +43,7 @@ public class TicTacToe
         Console.ResetColor();
     }
 
-    public void MakeMove(string input)
+    public bool MakeMove(string input)
     {
         if (input.Length == 1 && char.IsDigit(input[0]) && int.Parse(input) >= 1 && int.Parse(input) <= 9)
         {
@@ -51,15 +51,18 @@ public class TicTacToe
             if (grid[choice - 1] != "X" && grid[choice - 1] != "O")
             {
                 grid[choice - 1] = currentPlayer == 1 ? "X" : "O";
+                return true;
             }
             else
             {
                 Console.WriteLine("That cell is already occupied. Please choose another cell.");
+                return false;
             }
         }
         else
         {
             Console.WriteLine("Invalid input! Please enter a number between 1 and 9.");
+            return false;
         }
     }
 
@@ -106,9 +109,13 @@ public class TicTacToe
             PrintGrid();
             Console.WriteLine();
 
-            Console.Write($"Player {currentPlayer}, enter your move: ");
-            string input = Console.ReadLine();
-            MakeMove(input);
+            bool validMoveMade = false;
+            while(!validMoveMade)
+            {
+                Console.Write($"Player {currentPlayer}, enter your move: ");
+                string input = Console.ReadLine();
+                validMoveMade = MakeMove(input);
+            }
 
             if (CheckWinDraw())
             {
